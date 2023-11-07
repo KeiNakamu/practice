@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+}
+
+.header {
+  background-color: rgb(239, 239, 239);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.icon_image_pc {
+  padding-left: 40px;
+}
+
+.icon_image_sp {
+  display: none !important;
+}
+
+.nav_listItem {
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.nav_list {
+  display: flex;
+  align-items: center;
+}
+
+.nav_list a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-listItem {
+  margin-left: 40px;
+  list-style: none;
+}
+
+.button {
+  padding: 10px 10px;
+  background-color: #ffd500;
+  border-radius: 100vh;
+  -webkit-border-radius: 100vh;
+  -moz-border-radius: 100vh;
+  -ms-border-radius: 100vh;
+  -o-border-radius: 100vh;
+}
+
+.hero {
+  background-color: rgb(239, 239, 239);
+  margin-top: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero-image {
+  width: 90%;
+  height: auto;
+  margin-top: 200px;
+}
+
+.hero-text {
+  font-size: 50px;
+  margin-top: 200px;
+  position: absolute;
+  top: -10%;
+  left: 15%;
+}
+
+.content-text {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.content-textItem {
+  line-height: 2.0;
+  margin: 40px 200px 0 200px;
+}
+
+/* チェックボックスの非表示 */
+#drawer_input {
+  display: none;
+}
+
+.crosStalk {
+  background-color: #ffd500;
+  padding: 0 100px;
+}
+
+.crosStalk-list {
+  display: flex;
+  align-items: center;
+}
+
+.crosStalk-numberItem {
+  color: #ffffff;
+  font-size: 250px;
+  font-family: 'Snell Roundhand',sans-serif;
+}
+
+.crosStalk-listItem {
+  font-size: 30px;
+  margin: 10px 0px 0px 20px;
+}
+
+.balloon1-right {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 7px 10px;
+  min-width: 500px;
+  max-width: 100%;
+  height: 100px;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon1-right:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e0edff;
+}
+
+.balloon1-right p {
+  margin: 0;
+  padding: 0;
+}
+
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 500px;
+  max-width: 100%;
+  height: 150px;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .icon_image_pc {
+    display: none !important;
+  }
+
+  .icon_image_sp {
+    float: left;
+    margin-top: 20px;
+    margin-left: 40px;
+    display: block !important;
+  }
+
+  .drawer_hidden {
+    display: none;
+  }
+
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    height: 90px;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+  }
+
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+    margin-right: 30px;
+  }
+
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 8px;
+  }
+
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* メニューのデザイン*/
+  .nav_listItem {
+    width: 50%;
+    height: 70%;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    /*メニューを画面の外に飛ばす*/
+    z-index: 99;
+    background: #fff;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    display: flex;
+  }
+
+  .nav_list{
+    flex-direction: column;
+  }
+
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_listItem {
+    left: 0;/* メニューを画面に入れる */
+  }
+
+  .header-listItem {
+    margin-top: 20px;
+  }
+}
